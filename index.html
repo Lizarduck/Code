@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies the document type as HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding of the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is displayed correctly on all devices and screen sizes -->
+    <title>Bingles Board</title>
+    <!-- Defines the title of the document that appears in the browser tab -->
+    <style>
+        /* Inline CSS styles for the document */
+        body {
+            background-color: paleturquoise;
+            /* Sets the background color of the entire document */
+        }
+        .saved-texts {
+            margin-top: 20px;
+            /* Adds a margin above the saved texts section */
+        }
+        .saved-texts p {
+            margin: 5px 0;
+            /* Adds a margin above and below each paragraph within saved texts */
+        }
+        .reset-button {
+            margin-top: 11px;
+            /* Adds a margin above the reset button */
+            padding: 8px 12px;
+            /* Adds padding inside the reset button */
+            cursor: pointer;
+            /* Changes the cursor to a pointer when hovering over the button */
+        }
+    </style>
+</head>
+<body>
+    <!-- The main content of the HTML document -->
+    <h1>Bingles Board</h1>
+<p>Version 1</p>
+    <!-- A heading for the page -->
+    <div class="container">
+        <!-- A container for the text input -->
+        <label for="textbox1">Enter your text:</label>
+        <!-- A label for the textbox -->
+        <input type="text" id="textbox1" class="textbox" placeholder="Type here...">
+        <!-- A text input field where users can type text -->
+    </div>
+    <div class="saved-texts">
+        <!-- A container for displaying saved texts -->
+        <h3>Saved Texts:</h3>
+        <!-- A subheading for the saved texts section -->
+        <div id="texts-list"></div>
+        <!-- A div where saved texts will be displayed -->
+        <button class="reset-button" id="reset-button">Reset Saved Texts</button>
+        <!-- A button to reset the saved texts -->
+    </div>
+
+    <script>
+        // JavaScript code for handling text saving and resetting
+        const textbox = document.getElementById('textbox1');
+        // Gets the textbox element by its ID
+        const textsList = document.getElementById('texts-list');
+        // Gets the div for displaying saved texts by its ID
+        const resetButton = document.getElementById('reset-button');
+        // Gets the reset button element by its ID
+
+        // Function to load texts from local storage
+        function loadTexts() {
+            const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || [];
+            // Retrieves saved texts from local storage, or an empty array if none exist
+            savedTexts.forEach(text => {
+                const savedText = document.createElement('p');
+                // Creates a new paragraph element
+                savedText.textContent = text;
+                // Sets the text content of the paragraph
+                textsList.insertBefore(savedText, textsList.firstChild);
+                // Inserts the new paragraph at the beginning of the texts list
+            });
+        }
+
+        // Function to save texts to local storage
+        function saveText(text) {
+            const savedTexts = JSON.parse(localStorage.getItem('savedTexts')) || [];
+            // Retrieves saved texts from local storage, or an empty array if none exist
+            savedTexts.unshift(text);
+            // Adds the new text to the beginning of the array
+            localStorage.setItem('savedTexts', JSON.stringify(savedTexts));
+            // Saves the updated array back to local storage
+        }
+
+        // Function to clear texts from local storage
+        function resetTexts() {
+            localStorage.removeItem('savedTexts');
+            // Removes the saved texts from local storage
+            textsList.innerHTML = '';
+            // Clears the displayed list of saved texts
+        }
+
+        // Load texts when the page loads
+        window.addEventListener('load', loadTexts);
+        // Calls loadTexts function when the page finishes loading
+
+        // Save the text when the textbox loses focus
+        textbox.addEventListener('blur', function() {
+            const textValue = this.value.trim();
+            // Gets the trimmed value of the textbox
+            if (textValue !== '') {
+                // Checks if the textbox is not empty
+                saveText(textValue);
+                // Saves the text to local storage
+
+                const savedText = document.createElement('p');
+                // Creates a new paragraph element
+                savedText.textContent = textValue;
+                // Sets the text content of the paragraph
+                textsList.insertBefore(savedText, textsList.firstChild);
+                // Inserts the new paragraph at the beginning of the texts list
+
+                this.value = '';
+                // Clears the textbox
+            }
+        });
+
+        // Reset button event listener
+        resetButton.addEventListener('click', resetTexts);
+        // Calls resetTexts function when the reset button is clicked
+    </script>
+</body>
+</html>
