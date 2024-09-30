@@ -13,3 +13,9 @@ if (!city) {
 let symbol1 = Symbol(`mysymbol`);
 let symbol2 = Symbol(`mysymbol`);
 symbol1 === symbol2;
+
+const wiggle = {
+  wiggleSpeed: `bursting`,
+  wiggleLevel: 36,
+  wiggleProofSubscriptionOn: true,
+};
