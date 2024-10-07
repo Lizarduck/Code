@@ -26,3 +26,9 @@ Boolean(0 == `0`);
 
 let userName = prompt(`What is your name?`);
 let welcomeMessage = alert(`Welcome, ` + userName);
+
+const dt = date();
+const hours = dt.getHours();
+let msg;
+msg = hours < 12 ? (`Good morning!`) ; (`Welcome`);
+console.log(msg);
