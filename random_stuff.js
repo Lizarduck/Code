@@ -19,3 +19,10 @@ const wiggle = {
   wiggleLevel: 36,
   wiggleProofSubscriptionOn: true,
 };
+
+x = x ^ 2;
+
+Boolean(0 == `0`);
+
+let userName = prompt(`What is your name?`);
+let welcomeMessage = alert(`Welcome, ` + userName);
