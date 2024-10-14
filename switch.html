@@ -1,34 +1,23 @@
-<!DOCTYPE html>
+<!DOCTYPE html.>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <meta name="viewport" content="width=device=width, initial-scale=1.0" />
-    <title>Holiday Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="message"></div>
+    <div id="root"></div>
     <script>
-      const dt = new Date();
-      const month = dt.getMonth();
-      let msg;
-      switch (month) {
-        case 0:
-          msg = `January 4 is National Spaghetti Day!`;
-          break;
-        case 1:
-          msg = `Febuary 9 is National Pizza day!`;
-          break;
-        case 2:
-          msg = `March 26 is National Spinach day!`;
-          break;
-        case 3:
-          msg = `April 26 is National Pretzel day!`;
-          break;
-        default:
-          msg = `No holidays this month :(`;
-      }
-      el.innerHTML = msg;
+      let guessNumber = 0;
+      let numberToGuess = 3;
+      let guess;
+      do {
+        guess = Math.floor(Math.random() * 4);
+        guessNumber++;
+      } while (guess != numberToGuess);
+      document.getElementById("root").innerHTML = `
+      <h2>I guessed the number ${numberToGuess}!</h2>
+      <p>It only took me ${guessNumber} guesses!</p>`;
     </script>
   </body>
 </html>

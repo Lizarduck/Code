@@ -49,3 +49,8 @@ const pets = [`cat`, `dog`, `chicken`];
 for (let pet of pets) {
   console.log(pet);
 }
+
+let text = `callum`;
+for (character of text) {
+  console.log(character);
+}
