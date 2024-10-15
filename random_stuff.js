@@ -54,3 +54,10 @@ let text = `callum`;
 for (character of text) {
   console.log(character);
 }
+let phoneNumber = `555-757-1212`;
+for (let digit of phoneNumber) {
+  if (digit === `-`) continue;
+  console.log(digit);
+}
+
+const box = [1, 4, 8, 1, 2];
