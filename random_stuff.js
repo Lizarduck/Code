@@ -61,3 +61,10 @@ for (let digit of phoneNumber) {
 }
 
 const box = [1, 4, 8, 1, 2];
+
+const myArray = [3434, 56, 2];
+let total = 0;
+for (let i = 0; i < myArray.length - 1; i++) {
+  total += myArray[i];
+}
+console.log(`${total}`);
