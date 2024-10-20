@@ -9,10 +9,10 @@
     <div id="root"></div>
     <script>
       let guessNumber = 0;
-      let numberToGuess = 3;
+      let numberToGuess = 18;
       let guess;
       do {
-        guess = Math.floor(Math.random() * 4);
+        guess = Math.floor(Math.random() * 100);
         guessNumber++;
       } while (guess != numberToGuess);
       document.getElementById("root").innerHTML = `

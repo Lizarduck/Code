@@ -37,7 +37,7 @@ if (
   bingles = "yes";
 }
 
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 320000; i++) {
   console.log(i);
 }
 
@@ -68,3 +68,33 @@ for (let i = 0; i < myArray.length - 1; i++) {
   total += myArray[i];
 }
 console.log(`${total}`);
+
+function squareIt(num) {
+  return num * num;
+}
+
+function doMath(value, mathToDo) {
+  let result = mathToDo;
+  return result;
+}
+
+let prices = [4.99, 3, 98, 54.99];
+let theTotal = prices.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  0
+);
+theTotal;
+
+const ingredients = [
+  "eggs",
+  `milk`,
+  `cheese`,
+  `garlic`,
+  `onion`,
+  `kale`,
+  `salt`,
+  `pepper`,
+];
+let listItems = ingredients.map(
+  (singleIngredient) => `<li>${singleIngredient}</li>`
+);
