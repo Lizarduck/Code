@@ -98,3 +98,28 @@ const ingredients = [
 let listItems = ingredients.map(
   (singleIngredient) => `<li>${singleIngredient}</li>`
 );
+
+const animalNames = [
+  `aardvark`,
+  `alligator`,
+  `alpaca`,
+  `boar`,
+  `beaver`,
+  `cat`,
+  `dog`,
+  `elephant`,
+];
+const animalsStartingWithA = animalNames.filter((animal) =>
+  animal.startsWith(`a`)
+);
+
+function convertToLowercaseAndSort(o) {
+  let cased = o.toLowerCase();
+  let sorted = cased.sort();
+  return sorted;
+}
+words.convertToLowercaseAndSort();
+
+let cased = words.toLowerCase();
+let sorted = cased.sort();
+console.log(sorted);
