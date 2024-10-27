@@ -113,13 +113,10 @@ const animalsStartingWithA = animalNames.filter((animal) =>
   animal.startsWith(`a`)
 );
 
-function convertToLowercaseAndSort(o) {
-  let cased = o.toLowerCase();
-  let sorted = cased.sort();
-  return sorted;
-}
-words.convertToLowercaseAndSort();
+const person = { eyes: 2, feet: 2, eyeColor: `brown` };
 
-let cased = words.toLowerCase();
-let sorted = cased.sort();
-console.log(sorted);
+function Cat(name, type) {
+  this.name = name;
+  this.type = type;
+}
+const ourCat = new Cat(`murray`, `domestic short hair`);
