@@ -120,3 +120,28 @@ function Cat(name, type) {
   this.type = type;
 }
 const ourCat = new Cat(`murray`, `domestic short hair`);
+
+class Kaiju {
+  constructor(name, description) {
+    this.name = name;
+    this.description = description;
+  }
+}
+
+const newKaiju = new Kaiju(`Godzilla`, `Irradiated reptile`);
+
+function Kaiju(name, description) {
+  this.name = name;
+  this.description = description;
+}
+
+const myHouse = {
+  rooms: {
+    bedrooms: 2,
+    bathrooms: 2,
+  },
+  city: {
+    population: 1000,
+    name: `San Francisco`,
+  },
+};
