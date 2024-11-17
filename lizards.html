@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lizards</title>
+  </head>
+  <body style="background-color: lightgreen">
+    <h1 style="font-family: helvetica">Lizards</h1>
+  </body>
+  <p style="font-family: helvetica">There are lizards here I think...</p>
+  <input class="styled" type="button" value="Watch out for lizard!" />
+  <script>
+    const button = document.querySelector("input");
+    const paragraph = document.querySelector("p");
+
+    button.addEventListener("click", updateButton);
+
+    function updateButton() {
+      if (button.value === "Watch out for lizard!") {
+        button.value = "There is nothing I can do...";
+        paragraph.textContent = "Lizards have jumped on your head!";
+      } else {
+        button.value = "ok!";
+        paragraph.textContent = "Watch out for lizard!";
+      }
+    }
+  </script>
+  <p><img src="lizard.jpg" /></p>
+</html>

@@ -145,3 +145,15 @@ const myHouse = {
     name: `San Francisco`,
   },
 };
+
+function Vehicle(speed) {
+  this.speed = speed;
+  this.moveForward = function () {
+    return `Moving forward at ${this.speed}`;
+  };
+}
+const Automobile = new Vehicle(55);
+Automobile.wheels = 4;
+Automobile.engine = `electric`;
+Automobile;
+const Truck = Object.create(Automobile);
