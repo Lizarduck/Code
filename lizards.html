@@ -4,25 +4,42 @@
     <title>Lizards</title>
   </head>
   <body style="background-color: lightgreen">
-    <h1 style="font-family: helvetica">Lizards</h1>
-  </body>
-  <p style="font-family: helvetica">There are lizards here I think...</p>
-  <input class="styled" type="button" value="Watch out for lizard!" />
-  <script>
-    const button = document.querySelector("input");
-    const paragraph = document.querySelector("p");
+    <h1 style="color: darkcyan; font-family: helvetica">Lizards</h1>
 
-    button.addEventListener("click", updateButton);
+    <p style="color: darkcyan; font-family: helvetica">
+      There are lizards here I think...
+    </p>
+    <input
+      style="color: darkcyan"
+      type="button"
+      value="Watch out for lizard!"
+    />
+    <script>
+      const button = document.querySelector("input");
+      const paragraph = document.querySelector("p");
 
-    function updateButton() {
-      if (button.value === "Watch out for lizard!") {
-        button.value = "There is nothing I can do...";
-        paragraph.textContent = "Lizards have jumped on your head!";
-      } else {
-        button.value = "ok!";
-        paragraph.textContent = "Watch out for lizard!";
+      button.addEventListener("click", updateButton);
+
+      function updateButton() {
+        if (button.value === "Watch out for lizard!") {
+          button.value = "There is nothing I can do...";
+          paragraph.textContent = "Lizards have jumped on your head!";
+        } else {
+          button.value = "ok!";
+          paragraph.textContent = "Watch out for lizard!";
+        }
       }
-    }
-  </script>
-  <p><img src="lizard.jpg" /></p>
+    </script>
+    <p><img src="lizard.jpg" /></p>
+    <style>
+      h1 {
+        font-size: 60px;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+    <i>lizards!</i>
+  </body>
 </html>
+<!-- lizzzzzards -->
